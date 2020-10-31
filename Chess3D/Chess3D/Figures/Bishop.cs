@@ -3,7 +3,7 @@
     public class Bishop : Figure3D
     {
         public Bishop()
-        : base('B')
+        : base(FigureRepresentation.Bishop)
         {
         }
     }

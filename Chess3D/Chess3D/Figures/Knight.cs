@@ -3,7 +3,7 @@
     public class Knight : Figure3D
     {
         public Knight()
-        : base('N')
+        : base(FigureRepresentation.Knight)
         {
         }
     }

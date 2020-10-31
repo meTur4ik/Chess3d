@@ -3,7 +3,7 @@
     public class Rook : Figure3D
     {
         public Rook()
-        : base('R')
+        : base(FigureRepresentation.Rook)
         {
         }
     }

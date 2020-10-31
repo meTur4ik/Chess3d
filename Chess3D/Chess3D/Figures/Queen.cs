@@ -3,7 +3,7 @@
     public class Queen : Figure3D
     {
         public Queen()
-        : base('Q')
+        : base(FigureRepresentation.Queen)
         {
         }
     }

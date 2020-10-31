@@ -3,7 +3,7 @@
     public class Pawn : Figure3D
     {
         public Pawn()
-        : base('P')
+        : base(FigureRepresentation.Pawn)
         {
         }
     }

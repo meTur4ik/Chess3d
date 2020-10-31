@@ -47,5 +47,13 @@ namespace Chess3D.Boards
                 Console.WriteLine(new string('-', 20));
             }
         }
+
+        public void SetFigure(int x, int y, int z, Figure3D figure)
+        {
+            Cells[x, y, z] = figure;
+            figure.X = x;
+            figure.Y = y;
+            figure.Z = z;
+        }
     }
 }

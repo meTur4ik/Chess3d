@@ -8,10 +8,17 @@ namespace Chess3D
     {
         static void Main(string[] args)
         {
-            Figure3D fig = new Figure3D();
+            var fig = new King();
             Board3D board = new KubikschachBoard();
-            board.Cells[0,0,0] = new Pawn();
-            board.PrintBoard();
+            //board.Cells[0,0,0] = new Pawn();
+            board.SetFigure(0,0,0, fig);
+            var moves = fig.GetAvailableMoves(board);
+            foreach (var move in moves)
+            {
+                Console.WriteLine($"{move[0]}, {move[1]}, {move[2]}");
+            }
+            
+            //board.PrintBoard();
             /*foreach (var boardCell in board.Cells)
             {
                 Console.WriteLine(boardCell.Representation);
