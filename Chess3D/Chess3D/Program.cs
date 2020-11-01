@@ -8,10 +8,10 @@ namespace Chess3D
     {
         static void Main(string[] args)
         {
-            var fig = new King();
+            var fig = new Knight();
             Board3D board = new KubikschachBoard();
             //board.Cells[0,0,0] = new Pawn();
-            board.SetFigure(0,0,0, fig);
+            board.SetFigure(2,2,2, fig);
             var moves = fig.GetAvailableMoves(board);
             foreach (var move in moves)
             {

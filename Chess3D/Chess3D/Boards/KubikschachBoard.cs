@@ -1,6 +1,4 @@
-﻿using Chess3D.Figures;
-
-namespace Chess3D.Boards
+﻿namespace Chess3D.Boards
 {
     /// <summary>
     /// Kubikschach board

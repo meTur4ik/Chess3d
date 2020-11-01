@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Chess3D.Boards;
 
 namespace Chess3D.Figures
