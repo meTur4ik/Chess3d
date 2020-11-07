@@ -8,20 +8,21 @@ namespace Chess3D.Figures
         public int X { get; set; }
         public int Y { get; set; }
         public int Z { get; set; }
-        public FigureSide Side { get; } = FigureSide.White;
+        public FigureSide Side { get; }
 
         public Figure3D()
         {
         }
 
-        public Figure3D(char representation)
+        public Figure3D(char representation, FigureSide side)
         {
             Representation = representation;
+            Side = side;
         }
 
-        public Figure3D(char representation, int x, int y, int z)
+        public Figure3D(char representation, FigureSide side, int x, int y, int z)
+        : this(representation, side)
         {
-            Representation = representation;
             X = x;
             Y = y;
             Z = z;

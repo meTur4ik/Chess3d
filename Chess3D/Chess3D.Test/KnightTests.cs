@@ -51,10 +51,8 @@ namespace Chess3D.Test
 
             var resultMoves = fig.GetAvailableMoves(_board);
 
-            foreach (var move in expectedMoves)
-            {
-                Assert.True(resultMoves.Any(x => x.SequenceEqual(move)));
-            }
+            Assertions.MovesCollectionContainsCollection(expectedMoves, resultMoves);
+            Assertions.MovesCollectionContainsCollection(resultMoves, expectedMoves);
         }
     }
 }

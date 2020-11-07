@@ -51,10 +51,9 @@ namespace Chess3D.Test
             _board.SetFigure(1, 1, 1, fig);
 
             var resultMoves = fig.GetAvailableMoves(_board);
-            foreach (var move in expectedMoves)
-            {
-                Assert.True(resultMoves.Any(x => x.SequenceEqual(move)));
-            }
+
+            Assertions.MovesCollectionContainsCollection(expectedMoves, resultMoves);
+            Assertions.MovesCollectionContainsCollection(resultMoves, expectedMoves);
         }
 
         [Test]
@@ -74,10 +73,9 @@ namespace Chess3D.Test
             var fig = new King();
             _board.SetFigure(0, 0, 0, fig);
             var resultMoves = fig.GetAvailableMoves(_board);
-            foreach (var move in expectedMoves)
-            {
-                Assert.True(resultMoves.Any(x => x.SequenceEqual(move)));
-            }
+
+            Assertions.MovesCollectionContainsCollection(expectedMoves, resultMoves);
+            Assertions.MovesCollectionContainsCollection(resultMoves, expectedMoves);
         }
     }
 }

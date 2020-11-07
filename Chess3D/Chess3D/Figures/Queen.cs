@@ -2,8 +2,8 @@
 {
     public class Queen : Figure3D
     {
-        public Queen()
-        : base(FigureRepresentation.Queen)
+        public Queen(FigureSide side=FigureSide.White)
+        : base(FigureRepresentation.Queen, side)
         {
         }
     }

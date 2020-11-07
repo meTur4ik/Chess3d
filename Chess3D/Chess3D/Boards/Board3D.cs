@@ -33,7 +33,7 @@ namespace Chess3D.Boards
         {
             for (int i = 0; i < CellsNum; i++)
             {
-                for (int j = 0; j < CellsNum; j++)
+                for (int j = CellsNum - 1; j >= 0; j--)
                 {
                     Console.WriteLine();
                     for (int k = 0; k < CellsNum; k++)

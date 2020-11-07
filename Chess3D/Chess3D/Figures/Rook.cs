@@ -2,8 +2,8 @@
 {
     public class Rook : Figure3D
     {
-        public Rook()
-        : base(FigureRepresentation.Rook)
+        public Rook(FigureSide side=FigureSide.White)
+        : base(FigureRepresentation.Rook, side)
         {
         }
     }

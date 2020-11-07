@@ -5,8 +5,8 @@ namespace Chess3D.Figures
 {
     public class Knight : Figure3D
     {
-        public Knight()
-        : base(FigureRepresentation.Knight)
+        public Knight(FigureSide side=FigureSide.White)
+        : base(FigureRepresentation.Knight, side)
         {
         }
 
