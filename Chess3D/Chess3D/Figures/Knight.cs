@@ -5,7 +5,7 @@ namespace Chess3D.Figures
 {
     public class Knight : Figure3D
     {
-        public Knight(FigureSide side=FigureSide.White)
+        public Knight(FigureSide side = FigureSide.White)
         : base(FigureRepresentation.Knight, side)
         {
         }
@@ -19,13 +19,13 @@ namespace Chess3D.Figures
             {
                 if (maxPos >= floor && floor >= 0)
                 {
-                    if (maxPos >= Y - 1 && Y - 1 >= 0)
+                    if (maxPos >= Y - 1 && Y - 1 >= 0 && board.Cells[floor, Y - 1, Z].Side != Side)
                         moves.Add(new[] { floor, Y - 1, Z });
-                    if (maxPos >= Y + 1 && Y + 1 >= 0)
+                    if (maxPos >= Y + 1 && Y + 1 >= 0 && board.Cells[floor, Y + 1, Z].Side != Side)
                         moves.Add(new[] { floor, Y + 1, Z });
-                    if (maxPos >= Z - 1 && Z - 1 >= 0)
+                    if (maxPos >= Z - 1 && Z - 1 >= 0 && board.Cells[floor, Y, Z - 1].Side != Side)
                         moves.Add(new[] { floor, Y, Z - 1 });
-                    if (maxPos >= Z + 1 && Z + 1 >= 0)
+                    if (maxPos >= Z + 1 && Z + 1 >= 0 && board.Cells[floor, Y, Z + 1].Side != Side)
                         moves.Add(new[] { floor, Y, Z + 1 });
                 }
             }
@@ -34,17 +34,14 @@ namespace Chess3D.Figures
             {
                 if (maxPos >= floor && floor >= 0)
                 {
-                    if (maxPos >= floor && floor >= 0)
-                    {
-                        if (maxPos >= Y - 2 && Y - 2 >= 0)
-                            moves.Add(new[] { floor, Y - 2, Z });
-                        if (maxPos >= Y + 2 && Y + 2 >= 0)
-                            moves.Add(new[] { floor, Y + 2, Z });
-                        if (maxPos >= Z - 2 && Z - 2 >= 0)
-                            moves.Add(new[] { floor, Y, Z - 2 });
-                        if (maxPos >= Z + 2 && Z + 2 >= 0)
-                            moves.Add(new[] { floor, Y, Z + 2 });
-                    }
+                    if (maxPos >= Y - 2 && Y - 2 >= 0 && board.Cells[floor, Y - 2, Z].Side != Side)
+                        moves.Add(new[] { floor, Y - 2, Z });
+                    if (maxPos >= Y + 2 && Y + 2 >= 0 && board.Cells[floor, Y + 2, Z].Side != Side)
+                        moves.Add(new[] { floor, Y + 2, Z });
+                    if (maxPos >= Z - 2 && Z - 2 >= 0 && board.Cells[floor, Y, Z - 2].Side != Side)
+                        moves.Add(new[] { floor, Y, Z - 2 });
+                    if (maxPos >= Z + 2 && Z + 2 >= 0 && board.Cells[floor, Y, Z + 2].Side != Side)
+                        moves.Add(new[] { floor, Y, Z + 2 });
                 }
             }
 
@@ -52,35 +49,35 @@ namespace Chess3D.Figures
             {
                 if (maxPos >= Y - 2 && Y - 2 >= 0)
                 {
-                    if (maxPos >= Z - 1 && Z - 1 >= 0)
-                        moves.Add(new []{X, Y - 2, Z - 1});
-                    if (maxPos >= Z + 1 && Z + 1 >= 0)
-                        moves.Add(new []{X, Y - 2, Z + 1});
+                    if (maxPos >= Z - 1 && Z - 1 >= 0 && board.Cells[X, Y - 2, Z - 1].Side != Side)
+                        moves.Add(new[] { X, Y - 2, Z - 1 });
+                    if (maxPos >= Z + 1 && Z + 1 >= 0 && board.Cells[X, Y - 2, Z + 1].Side != Side)
+                        moves.Add(new[] { X, Y - 2, Z + 1 });
                 }
 
                 if (maxPos >= Y - 1 && Y - 1 >= 0)
                 {
-                    if (maxPos >= Z - 2 && Z - 2 >= 0)
-                        moves.Add(new []{X, Y - 1, Z - 2});
-                    if (maxPos >= Z + 2 && Z + 2 >= 0)
-                        moves.Add(new []{X, Y - 1, Z + 2});
+                    if (maxPos >= Z - 2 && Z - 2 >= 0 && board.Cells[X, Y - 1, Z - 2].Side != Side)
+                        moves.Add(new[] { X, Y - 1, Z - 2 });
+                    if (maxPos >= Z + 2 && Z + 2 >= 0 && board.Cells[X, Y - 1, Z + 2].Side != Side)
+                        moves.Add(new[] { X, Y - 1, Z + 2 });
                 }
 
                 if (maxPos >= Y + 1 && Y + 1 >= 0)
                 {
-                    if (maxPos >= Z - 2 && Z - 2 >= 0)
-                        moves.Add(new []{X, Y + 1, Z - 2});
-                    if (maxPos >= Z + 2 && Z + 2 >= 0)
-                        moves.Add(new []{X, Y + 1, Z + 2});
+                    if (maxPos >= Z - 2 && Z - 2 >= 0 && board.Cells[X, Y + 1, Z - 2].Side != Side)
+                        moves.Add(new[] { X, Y + 1, Z - 2 });
+                    if (maxPos >= Z + 2 && Z + 2 >= 0 && board.Cells[X, Y + 1, Z + 2].Side != Side)
+                        moves.Add(new[] { X, Y + 1, Z + 2 });
                 }
 
                 if (maxPos >= Y + 2 && Y + 2 >= 0)
                 {
-                    if (maxPos >= Z - 1 && Z - 1 >= 0)
-                        moves.Add(new []{X, Y + 2, Z - 1});
-                    if (maxPos >= Z + 1 && Z + 1 >= 0)
-                        moves.Add(new []{X, Y + 2, Z + 1});
-                    
+                    if (maxPos >= Z - 1 && Z - 1 >= 0 && board.Cells[X, Y + 2, Z - 1].Side != Side)
+                        moves.Add(new[] { X, Y + 2, Z - 1 });
+                    if (maxPos >= Z + 1 && Z + 1 >= 0 && board.Cells[X, Y + 2, Z + 1].Side != Side)
+                        moves.Add(new[] { X, Y + 2, Z + 1 });
+
                 }
             }
 
@@ -98,7 +95,7 @@ namespace Chess3D.Figures
 
             // floor 5
             LastFloor(X + 2);
-            
+
 
             return moves.ToArray();
         }
