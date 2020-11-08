@@ -3,6 +3,7 @@
     public enum FigureSide
     {
         White,
-        Black
+        Black,
+        Field,
     }
 }

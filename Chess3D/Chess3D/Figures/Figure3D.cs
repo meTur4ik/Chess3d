@@ -8,7 +8,7 @@ namespace Chess3D.Figures
         public int X { get; set; }
         public int Y { get; set; }
         public int Z { get; set; }
-        public FigureSide Side { get; }
+        public FigureSide Side { get; } = FigureSide.Field;
 
         public Figure3D()
         {

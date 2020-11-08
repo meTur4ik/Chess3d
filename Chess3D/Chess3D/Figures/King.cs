@@ -23,7 +23,8 @@ namespace Chess3D.Figures
                         if (i == 0 && j == 0 && k == 0)
                             continue;
                         if (X + i >= 0 && Y + j >= 0 && Z + k >= 0
-                            && X + i <= maxLength && Y + j <= maxLength && Z + k <= maxLength)
+                            && X + i <= maxLength && Y + j <= maxLength && Z + k <= maxLength
+                            && board.Cells[X + i, Y + j, Z + k].Side != Side)
                         {
                             moves.Add(new []{ X + i, Y + j, Z + k });
                         }

@@ -70,9 +70,33 @@ namespace Chess3D.Test
                 new[] {1, 1, 1},
             };
 
-            var fig = new King();
-            _board.SetFigure(0, 0, 0, fig);
-            var resultMoves = fig.GetAvailableMoves(_board);
+            var king = new King();
+            _board.SetFigure(0, 0, 0, king);
+            var resultMoves = king.GetAvailableMoves(_board);
+
+            Assertions.MovesCollectionContainsCollection(expectedMoves, resultMoves);
+            Assertions.MovesCollectionContainsCollection(resultMoves, expectedMoves);
+        }
+
+        [Test]
+        public void King_ShouldNotBeAbleToAttackAlly()
+        {
+            var expectedMoves = new int[][]
+            {
+                new[] {0, 0, 1},
+                new[] {0, 1, 0},
+                new[] {0, 1, 1},
+                //new[] {1, 0, 0},
+                new[] {1, 0, 1},
+                new[] {1, 1, 0},
+                new[] {1, 1, 1},
+            };
+
+            var king = new King();
+            var knight = new Knight();
+            _board.SetFigure(0, 0, 0, king);
+            _board.SetFigure(1, 0, 0, knight);
+            var resultMoves = king.GetAvailableMoves(_board);
 
             Assertions.MovesCollectionContainsCollection(expectedMoves, resultMoves);
             Assertions.MovesCollectionContainsCollection(resultMoves, expectedMoves);
