@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Chess3D.Figures;
 
 namespace Chess3D.Boards
@@ -36,11 +37,14 @@ namespace Chess3D.Boards
                 for (int j = CellsNum - 1; j >= 0; j--)
                 {
                     Console.WriteLine();
+                    var strb = new StringBuilder();
                     for (int k = 0; k < CellsNum; k++)
                     {
-                        Console.Write($" {Cells[i, j, k].Representation}");
+                        strb.Append($" {Cells[i, j, k].Representation}");
                     }
-                    Console.WriteLine($"  {j + 1}");
+
+                    strb.Append($"  {j + 1}");
+                    Console.WriteLine(strb.ToString());
                 }
 
                 Console.WriteLine("\n A B C D E F G H");

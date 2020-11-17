@@ -12,7 +12,7 @@ namespace Chess3D.Figures
 
         public override int[][] GetAvailableMoves(Board3D board)
         {
-            List<int[]> moves = new List<int[]>();
+            var moves = new List<int[]>();
             var maxLength = board.CellsNum - 1;
             for (int i = -1; i <= 1; i++)
             {
